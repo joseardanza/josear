@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string linea;
+
+            int i;
+            int numero = -1;
+            int maximo = 0;
+            int sumatoria = 0;
+
+            while (numero < 0)
+            {
+                try
+                {
+                    Console.WriteLine("Ingresa un numero:");
+                    linea = Console.ReadLine();
+                    numero = int.Parse(linea);
+                }
+                catch
+                {
+                    Console.WriteLine("Error - Tenes que ingresar un numero entero y positivo:");
+
+                }
+                finally
+                {
+                    maximo = numero;
+                }
+            }
+
+            numero=numero-1;
+            for (i = 1; i <= maximo; i++)
+            {
+                sumatoria = sumatoria + numero;
+                numero = numero - 1;
+            }
+
+            Console.WriteLine("El resultado de la suma de los enteros anteriores es: ");
+            Console.WriteLine(sumatoria);
+
+            Console.ReadKey();
+        }
+    }
+}

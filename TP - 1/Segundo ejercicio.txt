@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Inicializo las variables que voy a utilizar.
+            string linea = null;
+            string nombre = null;
+            int edad = 0;
+
+            Console.WriteLine("Ingresa tu nombre:");
+            nombre = Console.ReadLine();
+
+            while (edad <= 0)
+            {
+                try
+                {
+                    Console.WriteLine("Ingresa tu edad:");
+                    linea = Console.ReadLine();
+                    edad = int.Parse(linea);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error - Apreta enter para ingresar tu edad nuevamente", e);
+                }
+                finally
+                {
+                    if (edad >= 18)
+                    {
+                        Console.WriteLine("Es mayor de edad");
+                    }
+                    if (edad <= 17 && edad > 0)
+                    {
+                        Console.WriteLine("Es menor de edad");
+                    }
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Inicializo las variables que voy a utilizar.
+            string linea=null;
+
+            int sumatoria = 0;
+            int cantidad = 0;
+            int numero = 0;
+            int promedio = 0;
+
+            do
+            {
+                Console.Write("Ingrese un valor (0 para finalizar):");
+                linea = Console.ReadLine();
+                numero = int.Parse(linea);
+                if (numero != 0)
+                {
+                    sumatoria = sumatoria + numero;
+                    cantidad = cantidad + 1;
+                }
+            } while (numero != 0);
+
+            if (sumatoria != 0)
+            {
+                promedio = sumatoria/cantidad;
+                Console.Write("El promedio de los valores ingresados es:");
+                Console.Write(promedio);
+            }
+            else
+            {
+                Console.Write("No se ingresaron valores.");
+            }
+            Console.ReadKey();
+        }
+    }
+}

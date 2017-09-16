@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string linea=null;
+
+            int numero1 = 0;
+            int numero2 = 0;
+            int maximodivisor = 0;
+
+            Console.WriteLine("Ingresa un numero:");
+            linea = Console.ReadLine();
+            numero1 = int.Parse(linea);
+
+            Console.WriteLine("Ingresa otro numero:");
+            linea = Console.ReadLine();
+            numero2 = int.Parse(linea);
+
+            for (int i = 1; i <= numero1; i++)
+            {
+                if((numero1%i==0)&&(numero2%i==0))
+                {
+                    maximodivisor = i;
+                }
+            }
+            Console.WriteLine("El maximo divisor entre " + numero1 + " y " + numero2 + " es: " + maximodivisor);
+            Console.ReadKey();
+        }
+    }
+}
